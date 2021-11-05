@@ -24,10 +24,15 @@ namespace MVCClinica.Controllers
 
         //Traer médicos por especialidad
 
-        public ActionResult Index(string especialidad)
+        public ActionResult IndexPorEspecialidad(string especialidad)
         {
-            var medicos = (from m in context.Medicos where m.Especialidad == especialidad select m).ToList();
-            return View("Index", medicos);
+            if (especialidad == "")
+            {
+                return RedirectToAction("Index");
+            }
+
+            var medicosEsp = (from m in context.Medicos where m.Especialidad == especialidad select m).ToList();
+            return View("Index", medicosEsp);
         }
 
         //Carga

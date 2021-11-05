@@ -8,6 +8,14 @@
 </head>
 <body>
     <p>@Html.ActionLink("Create New", "Create", "Medico")</p>
+
+    @using (Html.BeginForm("IndexPorEspecialidad", "Medico", FormMethod.Get))
+    {
+        @Html.TextBox("especialidad")
+        
+        <input type="submit" value="Get" />
+    }
+
     <table>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Nombre)</th>
