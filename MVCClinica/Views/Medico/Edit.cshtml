@@ -1,0 +1,54 @@
+﻿@model MVCClinica.Models.Medico
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "Medico", FormMethod.Post))
+    {
+        <div>
+            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayFor(model => model.Id)
+            @Html.HiddenFor(model => model.Id)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Apellido)
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.NroMatricula)
+            @Html.EditorFor(model => model.NroMatricula)
+            @Html.ValidationMessageFor(model => model.NroMatricula)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Especialidad)
+            @Html.EditorFor(model => model.Especialidad)
+            @Html.ValidationMessageFor(model => model.Especialidad)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.FechaNacimiento)
+            @Html.EditorFor(model => model.FechaNacimiento)
+            @Html.ValidationMessageFor(model => model.FechaNacimiento)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Ciudad)
+            @Html.EditorFor(model => model.Ciudad)
+            @Html.ValidationMessageFor(model => model.Ciudad)
+        </div>
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    }
+
+    @Html.ActionLink("Back to List", "Index", "Opera")
+</body>
+</html>
