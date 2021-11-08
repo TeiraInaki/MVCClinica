@@ -14,6 +14,18 @@ namespace MVCClinica
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "IndexPorNombreApellido",
+                url: "{controller}/{action}/{nombre}/{apellido}",
+                defaults: new { controller = "Medico", action = "IndexPorNombreApellido"}
+                );
+
+            routes.MapRoute(
+                name: "IndexPorEspecialidad",
+                url: "{controller}/{action}/{especialidad}",
+                defaults: new { controller = "Medico", action = "IndexPorEspecialidad"}
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

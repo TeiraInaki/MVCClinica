@@ -22,6 +22,15 @@ namespace MVCClinica.Data
                     Especialidad = "Pediatria",
                     FechaNacimiento = "1988-07-10",
                     Ciudad = "Maracaibo"
+                },
+                new Medico
+                {
+                    Nombre = "Clemente",
+                    Apellido = "Perez",
+                    NroMatricula = 124,
+                    Especialidad = "Nutricion",
+                    FechaNacimiento = "1996-10-10",
+                    Ciudad = "Concordia"
                 }
             };
             medicos.ForEach(m => context.Medicos.Add(m));

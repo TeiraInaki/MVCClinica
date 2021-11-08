@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using MVCClinica.Data;
 using MVCClinica.Models;
+using MVCClinica.Filters;
 
 namespace MVCClinica.Controllers
 {
@@ -35,8 +36,15 @@ namespace MVCClinica.Controllers
             return View("Index", medicosEsp);
         }
 
-        //Carga
+        public ActionResult IndexPorNombreApellido(string nombre, string apellido)
+        {
+            var medicos = (from m in context.Medicos where m.Nombre == nombre && m.Apellido == apellido select m).ToList();
 
+            return View("Index", medicos);
+        }
+
+        //Carga
+        [FiltroGeneral]
         public ActionResult Create()
         {
             Medico medico = new Medico();
